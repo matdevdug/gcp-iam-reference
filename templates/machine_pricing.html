@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Pricing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Machine Type Pricing</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Machine Type</th>
+                    <th>Region</th>
+                    <th>Hourly Rate</th>
+                    <th>Monthly Rate</th>
+                    <th>Monthly Rate (1 Year)</th>
+                    <th>Monthly Rate (3 Years)</th>
+                    <th>Spot Hourly Rate</th>
+                    <th>Spot Monthly Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for machine_type, regions in pricing_data['compute']['instance'].items() %}
+                    {% for region, rates in regions.items() %}
+                        <tr>
+                            <td>{{ machine_type }}</td>
+                            <td>{{ region }}</td>
+                            <td>{{ rates['hour'] }}</td>
+                            <td>{{ rates['month'] }}</td>
+                            <td>{{ rates['month_1y'] }}</td>
+                            <td>{{ rates['month_3y'] }}</td>
+                            <td>{{ rates['hour_spot'] }}</td>
+                            <td>{{ rates['month_spot'] }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import os
+import yaml
 from flask import *
 from all_functions import *
 import json
@@ -41,6 +42,11 @@ def eueea():
     country_code = get_country_codes()
     return is_eea(country_code)
 
+@app.route('/machine_pricing', methods=['GET'])
+def machine_pricing():
+    with open('pricing.yml', 'r') as file:
+        pricing_data = yaml.safe_load(file)
+    return render_template('machine_pricing.html', pricing_data=pricing_data)
 
 if __name__ == '__main__':
     app.run(debug=False)
