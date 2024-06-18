@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <h3>Search Page</h3>
+
+    <form>
+        <div class="container-fluid">
+            <label for="searchInput">Search:</label>
+            <input type="text" class="form-control" id="searchInput" placeholder="Type to search...">
+        </div>
+    </form>
+        <ul class="list-group" id="searchList">
+        {% for category in items %}
+            <li class="list-group-item">
+                <a href="{{ url_for('iam_classes', parameter=category) }}">{{ category }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle search input
+            document.getElementById('searchInput').addEventListener('input', function () {
+                var searchValue = this.value.toLowerCase();
+                var listItems = document.querySelectorAll('#searchList li');
+
+                listItems.forEach(function (item) {
+                    var itemText = item.textContent.toLowerCase();
+                    item.style.display = itemText.includes(searchValue) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+{% endblock %}

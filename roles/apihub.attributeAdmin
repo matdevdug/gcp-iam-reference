@@ -1,0 +1,16 @@
+{
+  "description": "Full access to all Cloud API hub attribute's resources.",
+  "etag": "AA==",
+  "includedPermissions": [
+    "apihub.attributes.create",
+    "apihub.attributes.delete",
+    "apihub.attributes.get",
+    "apihub.attributes.list",
+    "apihub.attributes.update",
+    "resourcemanager.projects.get",
+    "resourcemanager.projects.list"
+  ],
+  "name": "roles/apihub.attributeAdmin",
+  "stage": "BETA",
+  "title": "Cloud API hub Attributes Admin"
+}

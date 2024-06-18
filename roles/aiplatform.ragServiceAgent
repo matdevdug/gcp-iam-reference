@@ -1,0 +1,18 @@
+{
+  "description": "Vertex AI Service Agent used by Vertex RAG to access user imported data and Vertex AI in the project",
+  "etag": "AA==",
+  "includedPermissions": [
+    "aiplatform.endpoints.get",
+    "aiplatform.endpoints.predict",
+    "aiplatform.models.get",
+    "logging.logEntries.create",
+    "logging.logEntries.route",
+    "storage.buckets.get",
+    "storage.buckets.list",
+    "storage.objects.get",
+    "storage.objects.list"
+  ],
+  "name": "roles/aiplatform.ragServiceAgent",
+  "stage": "GA",
+  "title": "Vertex AI RAG Data Service Agent"
+}
