@@ -9,6 +9,10 @@ Pretty straight-forward, I recommend the Dockerfile but as you can tell there ar
 
 ## Usage
 See here: https://gcp-iam-reference.matduggan.com/
+
+## GCP Machine Types and Pricing
+This new category provides detailed information on all GCP machine types, their pricing, and whether they qualify for committed use discounts. For more detailed information, please refer to the [GCP Machine Types and Pricing](GCP_Machine_Types_and_Pricing.md).
+
 ## Support
 I'm glad to fix whatever. Either open an issue here or ping me on Mastodon: https://c.im/@matdevdug
 
